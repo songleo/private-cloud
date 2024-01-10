@@ -12,6 +12,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: kubernetes-apps
-  targetNamespace: default
+  targetNamespace: argocd
   timeout: 3m0s
   wait: true

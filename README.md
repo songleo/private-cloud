@@ -26,16 +26,16 @@ Please ensure that you add the mapping of IP addresses and domain names in your 
     - [ ] MySQL
     - [ ] Redis
 - Web Server
-    - [x] NGINX: http://www.private-cloud.com/nginx
+    - [x] [NGINX](http://www.private-cloud.com/nginx)
 - Identity and Access Management
     - [ ] Keycloak
 - Configuration Management
-    - [x] Ansible/AWX: http://www.private-cloud.com/awx/#/home
+    - [x] [Ansible/AWX]( http://www.private-cloud.com/awx/#/home)
     - [ ] Terraform
 - GitOps
     - [ ] Jenkins
     - [x] Flux
-    - [ ] Argo CD
+    - [x] [Argo CD](http://www.private-cloud.com/)
 - Message Queue
     - [ ] Kafka
     - [ ] RabbitMQ
