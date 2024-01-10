@@ -73,9 +73,12 @@ kind load docker-image ghcr.io/fluxcd/notification-controller:v1.2.3 --name priv
 kind load docker-image ghcr.io/fluxcd/source-controller:v1.2.3 --name private-cloud --nodes private-cloud-worker2,private-cloud-worker
 
 # awx
-kind load docker-image quay.io/ansible/awx-operator:2.10.0 --name private-cloud
-kind load docker-image postgres:13 --name private-cloud
-kind load docker-image docker.io/redis:7 --name private-cloud
-kind load docker-image quay.io/ansible/awx:23.6.0 --name private-cloud
-kind load docker-image quay.io/ansible/awx-ee:latest --name private-cloud
+kind load docker-image quay.io/ansible/awx-operator:2.10.0 --name private-cloud --nodes private-cloud-worker2,private-cloud-worker
+kind load docker-image postgres:13 --name private-cloud --nodes private-cloud-worker2,private-cloud-worker
+kind load docker-image docker.io/redis:7 --name private-cloud --nodes private-cloud-worker2,private-cloud-worker
+kind load docker-image quay.io/ansible/awx:23.6.0 --name private-cloud --nodes private-cloud-worker2,private-cloud-worker
+kind load docker-image quay.io/ansible/awx-ee:latest --name private-cloud --nodes private-cloud-worker2,private-cloud-worker
+
+# argocd
+kind load docker-image quay.io/argoproj/argocd:v2.9.3 --name private-cloud --nodes private-cloud-worker2,private-cloud-worker
 ```

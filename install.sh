@@ -10,9 +10,6 @@ kind export kubeconfig --name private-cloud
 kubectl label nodes private-cloud-worker node-role.kubernetes.io/worker=worker
 kubectl label nodes private-cloud-worker2 node-role.kubernetes.io/worker=worker
 
-# add label for ingress-nginx
-kubectl label nodes private-cloud-control-plane ingress-ready="true"
-
 # deploy flux
 # https://fluxcd.io/flux/get-started/
 flux bootstrap github \
