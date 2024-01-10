@@ -9,6 +9,12 @@ This repository provides a tool that rapidly establishes a private cloud platfor
 - $GITHUB_USER
 - $GITHUB_TOKEN
 
+Please ensure that you add the mapping of IP addresses and domain names in your `/etc/hosts` file. For example, if your local IP is `192.168.0.106`, you need to add the following content to your `/etc/hosts` file.
+
+```
+192.168.0.106 www.private-cloud.com
+```
+
 # Technology Stack
 
 - Infrastructure
@@ -22,7 +28,7 @@ This repository provides a tool that rapidly establishes a private cloud platfor
 - Identity and Access Management
     - [ ] Keycloak
 - Configuration Management
-    - [x] Ansible/AWX
+    - [x] Ansible/AWX: http://www.private-cloud.com/awx/#/home
     - [ ] Terraform
 - GitOps
     - [ ] Jenkins
