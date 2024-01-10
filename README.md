@@ -25,6 +25,8 @@ Please ensure that you add the mapping of IP addresses and domain names in your 
 - Database
     - [ ] MySQL
     - [ ] Redis
+- Web Server
+    - [x] NGINX: http://www.private-cloud.com/nginx
 - Identity and Access Management
     - [ ] Keycloak
 - Configuration Management
