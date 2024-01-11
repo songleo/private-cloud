@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kube-prometheus/crds
+  path: ./kube-prometheus/manifests/setup
   prune: true
   retryInterval: 1m0s
   sourceRef:
