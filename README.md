@@ -35,6 +35,7 @@ Please ensure that you add the mapping of IP addresses and domain names in your 
 - GitOps
     - [ ] Jenkins
     - [x] Flux
+    - [x] [Weave GitOps](http://www.private-cloud.com/weave-gitops)
     - [x] [Argo CD](http://www.private-cloud.com/argocd)
 - Message Queue
     - [ ] Kafka
