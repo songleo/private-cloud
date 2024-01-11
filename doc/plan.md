@@ -6,3 +6,7 @@
 - [ ] enable tls for ingress
 - [ ] install jenkins
 - [ ] publish image
+- [ ] certmgr
+- [ ] diff all app mainifests and check if it need a blog
+- [ ] argo ingress issue
+- [ ] mysql ingress issue
