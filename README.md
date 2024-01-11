@@ -30,7 +30,7 @@ Please ensure that you add the mapping of IP addresses and domain names in your 
 - Identity and Access Management
     - [ ] Keycloak
 - Configuration Management
-    - [x] [Ansible/AWX]( http://www.private-cloud.com/awx/#/home)
+    - [x] [Ansible/AWX](http://www.private-cloud.com/awx/#/home)
     - [ ] Terraform
 - GitOps
     - [ ] Jenkins
@@ -47,9 +47,9 @@ Please ensure that you add the mapping of IP addresses and domain names in your 
     - [ ] SonarQube
 - Observability
     - [x] Metrics Server
-    - [ ] Prometheus
-    - [ ] Grafana
-    - [ ] Alertmanager
+    - [x] [Prometheus](http://www.private-cloud.com/prometheus)
+    - [x] [Grafana](http://www.private-cloud.com/grafana)
+    - [x] [Alertmanager](http://www.private-cloud.com/alertmanager)
     - [ ] Loki
     - [ ] OTEL
     - [ ] Jaeger
