@@ -19,3 +19,11 @@ flux bootstrap github \
   --path=./clusters/private-cloud \
   --personal \
   --private false
+
+PASSWORD="admin"
+gitops create dashboard ww-gitops \
+  --password=$PASSWORD \
+  --export > ./clusters/private-cloud/weave-gitops-dashboard.yaml
+git add -A && git commit -m "Add Weave GitOps Dashboard"
+git push
+kubectl port-forward svc/ww-gitops-weave-gitops -n flux-system 9001:9001
