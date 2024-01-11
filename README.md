@@ -2,7 +2,7 @@ This repository provides a tool that rapidly establishes a private cloud platfor
 
 # Prerequisites
 
-- kubectl
+- kubectl v1.27.3
 - kind v0.20.0
 - docker
 - flux version 2.2.2
