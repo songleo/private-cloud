@@ -6,6 +6,7 @@ This repository provides a tool that rapidly establishes a private cloud platfor
 - kind v0.20.0
 - docker
 - flux version 2.2.2
+- weave-gitop 0.38.0
 - $GITHUB_USER
 - $GITHUB_TOKEN
 
