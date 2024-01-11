@@ -6,12 +6,11 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./kube-prometheus/manifests
+  path: ./kube-prometheus
   prune: true
   retryInterval: 1m0s
   sourceRef:
     kind: GitRepository
     name: kubernetes-apps
-  targetNamespace: monitoring
   timeout: 3m0s
   wait: true
