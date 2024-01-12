@@ -47,6 +47,7 @@ Please ensure that you add the mapping of IP addresses and domain names in your 
     - [ ] Vault
     - [ ] Trivy
     - [ ] SonarQube
+    - [ ] cert-manager
 - Observability
     - [x] Metrics Server
     - [x] [Prometheus](http://www.private-cloud.com/prometheus)
