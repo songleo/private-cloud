@@ -1,8 +1,13 @@
 ## todo list
 
-- [ ] flux conf learn:kustomization/gitrepository/helmrepository/helmchart
+- [ ] flux conf learn:
+  - [x] kustomization
+  - [x] gitrepository
+  - [ ] helmrepository
+  - [ ] helmchart
 - [ ] flux ui tips
-- [ ] ingress annotation & app base path learning
+- [x] ingress annotation
+- [ ] app base path learning
 - [ ] install prometheus&grafana&alertmanager
     - https://medium.com/@giorgiodevops/kind-install-prometheus-operator-and-fix-missing-targets-b4e57bcbcb1f
     - https://medium.com/@charled.breteche/kind-fix-missing-prometheus-operator-targets-1a1ff5d8c8ad
