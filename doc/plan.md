@@ -20,3 +20,4 @@
 - [ ] argo deploy podinfo
 - [ ] mysql ingress issue
 - [x] check yaml format
+- [ ] auto e2e test
