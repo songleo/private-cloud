@@ -19,4 +19,4 @@
 - [ ] argo ingress issue
 - [ ] argo deploy podinfo
 - [ ] mysql ingress issue
-- [ ] check yaml format
+- [x] check yaml format
