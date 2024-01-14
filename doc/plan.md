@@ -20,4 +20,5 @@
 - [ ] argo deploy podinfo
 - [ ] mysql ingress issue
 - [x] check yaml format
-- [ ] auto e2e test
+- [x] auto e2e test
+- [ ] use Ginkgo refactor e2e

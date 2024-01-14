@@ -12,8 +12,11 @@ jobs:
     - name: checkout repository
       uses: actions/checkout@v2
 
-    - name: run e2e test
+    - name: install k8s cluster and deploy flux to install all apps
       env:
         GITHUB_USER: ${{ secrets.FLUX_USER }}
         GITHUB_TOKEN: ${{ secrets.FLUX_TOKEN }}
-      run: bash test/e2e-test.sh
+      run: bash ./install.sh
+
+    - name: run e2e test
+      run: bash ./test/e2e-test.sh

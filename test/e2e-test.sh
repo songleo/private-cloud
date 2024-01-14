@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-./install.sh
-
 echo "run e2e test ..."
 
 echo "reconcile flux resource ..."
