@@ -24,7 +24,7 @@ fi
 echo "create kind cluster"
 kind create cluster --name private-cloud --config kind-conf/kind-config.yaml
 
-https://fluxcd.io/flux/get-started/
+# https://fluxcd.io/flux/get-started/
 echo "install flux"
 flux bootstrap github \
   --owner=$GITHUB_USER \
