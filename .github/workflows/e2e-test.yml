@@ -1,0 +1,16 @@
+name: yaml lint
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  e2e-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run e2e test
+      run: bash test/e2e-test.sh
