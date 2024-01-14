@@ -15,3 +15,6 @@ spec:
   targetNamespace: awx
   timeout: 3m0s
   wait: true
+  dependsOn:
+    - name: ingress-nginx
+      namespace: flux-system
