@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./awx
+  path: ./apps/awx
   prune: true
   retryInterval: 1m0s
   sourceRef:
