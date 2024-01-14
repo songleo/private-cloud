@@ -3,13 +3,10 @@
 ./install.sh
 
 echo "run e2e test ..."
-
 echo "reconcile flux resource ..."
 flux reconcile source git flux-system
 flux reconcile source git apps
-
 flux reconcile helmrelease ww-gitops
-
 flux reconcile kustomization flux-system
 flux reconcile kustomization argocd
 flux reconcile kustomization awx
@@ -71,3 +68,20 @@ kubectl get statefulset/argocd-application-controller -n argocd | grep '1/1' || 
 kubectl get statefulset/awx-postgres-13 -n awx | grep '1/1' || exit 1
 kubectl get statefulset/alertmanager-main -n monitoring | grep '1/1' || exit 1
 kubectl get statefulset/prometheus-k8s -n monitoring | grep '1/1' || exit 1
+
+echo "add the mapping of IP addresses and domain name"
+IP_ADDRESS=$(hostname -I | awk '{print $1}')
+HOSTNAME="www.private-cloud.com"
+sudo sed -i "/$IP_ADDRESS /c\\$IP_ADDRESS $HOSTNAME" /etc/hosts
+
+echo "verify all ingress ..."
+curl -o /dev/null -s -w "%{http_code}" http://www.private-cloud.com/nginx | grep -q 200 || exit 1
+curl -o /dev/null -s -w "%{http_code}" http://www.private-cloud.com/awx/#/home | grep -q 200 || exit 1
+curl -o /dev/null -s -w "%{http_code}" http://www.private-cloud.com/weave-gitops | grep -q 301 || exit 1
+curl -o /dev/null -s -w "%{http_code}" http://www.private-cloud.com/argocd | grep -q 308 || exit 1
+curl -o /dev/null -s -w "%{http_code}" http://www.private-cloud.com/prometheus | grep -q 302 || exit 1
+curl -o /dev/null -s -w "%{http_code}" http://www.private-cloud.com/grafana | grep -q 302 || exit 1
+curl -o /dev/null -s -w "%{http_code}" http://www.private-cloud.com/alertmanager | grep -q 200 || exit 1
+
+kubectl get po -A
+flux get all
