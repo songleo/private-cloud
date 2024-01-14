@@ -1,6 +1,6 @@
 name: yaml lint
 
-on:
+on:  # yamllint disable-line rule:truthy
   - push
   - pull_request
 
@@ -12,5 +12,5 @@ jobs:
     - name: checkout repository
       uses: actions/checkout@v2
 
-    - name: Run e2e test
+    - name: run e2e test
       run: bash test/e2e-test.sh
