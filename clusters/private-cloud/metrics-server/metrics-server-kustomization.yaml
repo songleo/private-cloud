@@ -11,7 +11,7 @@ spec:
   retryInterval: 1m0s
   sourceRef:
     kind: GitRepository
-    name: kubernetes-apps
+    name: apps
   targetNamespace: kube-system
   timeout: 3m0s
   wait: true
