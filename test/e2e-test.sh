@@ -10,13 +10,11 @@ flux reconcile source git flux-system
 flux reconcile source git apps
 
 flux reconcile kustomization flux-system
-flux reconcile kustomization ww-gitops
 kubectl wait --timeout 300s --for=condition=available -n flux-system \
     deployment/helm-controller \
     deployment/kustomize-controller \
     deployment/notification-controller \
     deployment/source-controller \
-    deployment/ww-gitops-weave-gitops \
     || exit 1
 
 flux reconcile kustomization ingress-nginx
@@ -69,6 +67,11 @@ kubectl get statefulset/argocd-application-controller -n argocd | grep '1/1' || 
 kubectl get statefulset/awx-postgres-13 -n awx | grep '1/1' || exit 1
 kubectl get statefulset/alertmanager-main -n monitoring | grep '1/1' || exit 1
 kubectl get statefulset/prometheus-k8s -n monitoring | grep '1/1' || exit 1
+
+flux reconcile kustomization weave-gitops
+kubectl wait --timeout 300s --for=condition=available -n flux-system \
+    deployment/ww-gitops-weave-gitops \
+    || exit 1
 
 # for debug
 kubectl get po -A
