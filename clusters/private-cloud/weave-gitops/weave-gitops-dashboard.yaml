@@ -33,9 +33,6 @@ spec:
         kind: HelmRepository
         name: ww-gitops
   interval: 1m0s
-  dependsOn:
-    - name: ingress-nginx
-      namespace: flux-system
   values:
     additionalArgs:
       - --route-prefix=/weave-gitops
