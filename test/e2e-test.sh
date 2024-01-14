@@ -6,14 +6,14 @@ echo "run e2e test ..."
 echo "reconcile flux resource ..."
 flux reconcile source git flux-system
 flux reconcile source git apps
-flux reconcile helmrelease ww-gitops
 flux reconcile kustomization flux-system
-flux reconcile kustomization argocd
-flux reconcile kustomization awx
 flux reconcile kustomization ingress-nginx
-flux reconcile kustomization kube-prometheus
 flux reconcile kustomization metrics-server
 flux reconcile kustomization nginx
+flux reconcile kustomization awx
+flux reconcile kustomization argocd
+flux reconcile kustomization kube-prometheus
+flux reconcile helmrelease ww-gitops
 
 echo "check all apps ..."
 kubectl wait --timeout 60s --for=condition=available -n argocd \
@@ -68,6 +68,16 @@ kubectl get statefulset/argocd-application-controller -n argocd | grep '1/1' || 
 kubectl get statefulset/awx-postgres-13 -n awx | grep '1/1' || exit 1
 kubectl get statefulset/alertmanager-main -n monitoring | grep '1/1' || exit 1
 kubectl get statefulset/prometheus-k8s -n monitoring | grep '1/1' || exit 1
+
+# make sure all ingress are ready
+flux reconcile kustomization flux-system
+flux reconcile kustomization ingress-nginx
+flux reconcile kustomization argocd
+flux reconcile kustomization awx
+flux reconcile kustomization kube-prometheus
+flux reconcile kustomization metrics-server
+flux reconcile kustomization nginx
+flux reconcile helmrelease ww-gitops
 
 # for debug
 kubectl get po -A
