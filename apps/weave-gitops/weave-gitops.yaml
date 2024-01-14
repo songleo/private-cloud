@@ -45,7 +45,7 @@ metadata:
     helm.sh/chart: weave-gitops-4.0.36
     helm.toolkit.fluxcd.io/name: ww-gitops
     helm.toolkit.fluxcd.io/namespace: flux-system
-  name: ww-gitops-weave-gitops
+  name: weave-gitops
 ---
 apiVersion: v1
 data:
@@ -160,7 +160,7 @@ metadata:
   labels:
     helm.toolkit.fluxcd.io/name: ww-gitops
     helm.toolkit.fluxcd.io/namespace: flux-system
-  name: ww-gitops-weave-gitops
+  name: weave-gitops
 rules:
 - apiGroups:
   - ""
@@ -221,14 +221,14 @@ metadata:
     helm.sh/chart: weave-gitops-4.0.36
     helm.toolkit.fluxcd.io/name: ww-gitops
     helm.toolkit.fluxcd.io/namespace: flux-system
-  name: ww-gitops-weave-gitops
+  name: weave-gitops
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: ww-gitops-weave-gitops
+  name: weave-gitops
 subjects:
 - kind: ServiceAccount
-  name: ww-gitops-weave-gitops
+  name: weave-gitops
   namespace: flux-system
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -328,7 +328,7 @@ metadata:
     helm.sh/chart: weave-gitops-4.0.36
     helm.toolkit.fluxcd.io/name: ww-gitops
     helm.toolkit.fluxcd.io/namespace: flux-system
-  name: ww-gitops-weave-gitops
+  name: weave-gitops
 spec:
   ports:
   - name: http
@@ -353,7 +353,7 @@ metadata:
     helm.toolkit.fluxcd.io/name: ww-gitops
     helm.toolkit.fluxcd.io/namespace: flux-system
     weave.works/app: weave-gitops-oss
-  name: ww-gitops-weave-gitops
+  name: weave-gitops
 spec:
   replicas: 1
   selector:
@@ -405,7 +405,7 @@ spec:
           runAsUser: 1000
           seccompProfile:
             type: RuntimeDefault
-      serviceAccountName: ww-gitops-weave-gitops
+      serviceAccountName: weave-gitops
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -418,7 +418,7 @@ metadata:
     helm.sh/chart: weave-gitops-4.0.36
     helm.toolkit.fluxcd.io/name: ww-gitops
     helm.toolkit.fluxcd.io/namespace: flux-system
-  name: ww-gitops-weave-gitops
+  name: weave-gitops
 spec:
   ingressClassName: nginx
   rules:
@@ -427,7 +427,7 @@ spec:
       paths:
       - backend:
           service:
-            name: ww-gitops-weave-gitops
+            name: weave-gitops
             port:
               number: 9001
         path: /weave-gitops

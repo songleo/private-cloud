@@ -40,4 +40,4 @@ flux bootstrap github \
 #   --export > ./clusters/private-cloud/weave-gitops-dashboard.yaml
 # git add -A && git commit -m "Add Weave GitOps Dashboard"
 # git push
-# kubectl port-forward svc/ww-gitops-weave-gitops -n flux-system 9001:9001
+# kubectl port-forward svc/weave-gitops -n flux-system 9001:9001

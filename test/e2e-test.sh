@@ -72,7 +72,7 @@ kubectl get statefulset/prometheus-k8s -n monitoring | grep '1/1' || exit 1
 
 flux reconcile kustomization weave-gitops
 kubectl wait --timeout 300s --for=condition=available -n flux-system \
-    deployment/ww-gitops-weave-gitops \
+    deployment/weave-gitops \
     || exit 1
 
 # for debug
