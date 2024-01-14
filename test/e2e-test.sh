@@ -57,6 +57,8 @@ kubectl wait --timeout 300s --for=condition=available -n argocd \
     || exit 1
 
 flux reconcile kustomization awx
+# waiting awx ready
+sleep 300
 kubectl wait --timeout 300s --for=condition=available -n awx \
     deployment/awx-operator-controller-manager \
     deployment/awx-task \
