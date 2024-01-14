@@ -4,6 +4,20 @@
 
 echo "run e2e test ..."
 
+echo "reconcile flux resource ..."
+flux reconcile source git flux-system
+flux reconcile source git apps
+
+flux reconcile helmrelease ww-gitops
+
+flux reconcile kustomization flux-system
+flux reconcile kustomization argocd
+flux reconcile kustomization awx
+flux reconcile kustomization ingress-nginx
+flux reconcile kustomization kube-prometheus
+flux reconcile kustomization metrics-server
+flux reconcile kustomization nginx
+
 echo "check all apps ..."
 kubectl wait --timeout 60s --for=condition=available -n argocd \
     deployment/argocd-applicationset-controller \
