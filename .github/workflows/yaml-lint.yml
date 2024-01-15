@@ -7,7 +7,6 @@ on:  # yamllint disable-line rule:truthy
       - 'release-*'
   pull_request:
     branches:
-      - main
       - 'release-*'
 
 jobs:
