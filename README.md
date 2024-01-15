@@ -34,3 +34,15 @@ Please ensure that you add the mapping of IP addresses and domain names in your 
   - [x] [Prometheus](http://www.private-cloud.com/prometheus)
   - [x] [Grafana](http://www.private-cloud.com/grafana)
   - [x] [Alertmanager](http://www.private-cloud.com/alertmanager)
+
+# Deploy
+
+```
+./install.sh
+```
+
+# Test
+
+```
+./test/e2e-test.sh
+```
