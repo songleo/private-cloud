@@ -1,8 +1,14 @@
 name: e2e test
 
 on:  # yamllint disable-line rule:truthy
-  - push
-  - pull_request
+  push:
+    branches:
+      - main
+      - 'release-*'
+  pull_request:
+    branches:
+      - main
+      - 'release-*'
 
 jobs:
   e2e-test:
