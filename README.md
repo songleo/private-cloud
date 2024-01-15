@@ -1,4 +1,4 @@
-This repository primarily offers a tool that enables users to quickly build a cloud platform on Kubernetes. This platform is mainly intended for the research and study of various [cloud-native projects](https://landscape.cncf.io/) and technologies.
+This repository primarily offers a tool that enables users to quickly build a private cloud platform on Kubernetes. This platform is mainly intended for the research and study of various [cloud-native projects](https://landscape.cncf.io/) and technologies.
 
 # Prerequisites
 
