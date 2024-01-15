@@ -5,7 +5,7 @@
   - [x] gitrepository
   - [ ] helmrepository
   - [ ] helmchart
-- [ ] flux ui tips
+- [x] flux ui tips
 - [x] ingress annotation
 - [ ] app base path learning
 - [ ] install prometheus&grafana&alertmanager
