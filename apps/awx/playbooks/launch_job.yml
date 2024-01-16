@@ -1,0 +1,20 @@
+---
+- name: launch job to ping host
+  hosts: localhost
+  gather_facts: false
+  collections:
+    - awx.awx
+  tasks:
+    - name: launch job
+      awx.awx.job_launch:
+        job_template: ping-host
+      register: job_info
+
+    - name: wait for the job to finish
+      awx.awx.job_wait:
+        job_id: "{{ job_info.id }}"
+      register: job_result
+
+    - name: print the job result
+      ansible.builtin.debug:
+        var: job_result

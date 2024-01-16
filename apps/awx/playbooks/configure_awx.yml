@@ -1,0 +1,64 @@
+---
+- name: configure awx
+  hosts: localhost
+  gather_facts: false
+  collections:
+    - awx.awx
+
+  tasks:
+    - name: create organization
+      organization:
+        name: automation-system
+        state: present
+
+    - name: create project
+      awx.awx.project:
+        name: automation-system
+        organization: automation-system
+        scm_type: git
+        scm_url: https://github.com/songleo/automation-system.git
+        scm_branch: main
+        scm_update_on_launch: false
+
+    - name: create inventory
+      awx.awx.inventory:
+        name: automation-system
+        organization: automation-system
+
+    - name: create machine credential
+      awx.awx.credential:
+        name: automation-system
+        organization: automation-system
+        credential_type: Machine
+        state: present
+        inputs:
+          username: admin
+          password: admin
+
+    - name: add new host to inventory
+      awx.awx.host:
+        name: "{{ item.name }}"
+        inventory: automation-system
+        enabled: true
+        variables: "{{ item.variables }}"
+
+      loop:
+        - name: vm1
+          variables:
+            ansible_ssh_host: 192.168.0.106
+            ansible_ssh_port: 11111
+        - name: vm2
+          variables:
+            ansible_ssh_host: 192.168.0.106
+            ansible_ssh_port: 22222
+
+    - name: add job template to ping host
+      awx.awx.job_template:
+        name: ping-host
+        job_type: run
+        inventory: automation-system
+        project: automation-system
+        playbook: playbooks/ping_host.yml
+        state: present
+        credentials:
+          - automation-system
