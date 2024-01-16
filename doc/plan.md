@@ -23,3 +23,4 @@
 - [ ] add shell lint
 - [x] auto e2e test
 - [ ] use Ginkgo refactor e2e
+- [ ] go thru repo and list the topic to share with blog
