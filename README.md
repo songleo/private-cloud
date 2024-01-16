@@ -1,4 +1,4 @@
-This repository provides a tool that rapidly establishes a private cloud platform using kind. It's ideal for Proof of Concept (PoC), educational, or testing purposes.
+This repository primarily offers a tool that enables users to quickly build a private cloud platform on Kubernetes. This platform is mainly intended for the research and study of various [cloud-native projects](https://landscape.cncf.io/) and technologies.
 
 # Prerequisites
 
@@ -18,70 +18,31 @@ Please ensure that you add the mapping of IP addresses and domain names in your 
 
 # Technology Stack
 
-- Infrastructure
-    - [x] Kubernetes
-    - [x] Ingress NGINX
-- Networking
-    - [ ] Istio
-- Database
-    - [ ] MySQL
-    - [ ] Redis
+- Orchestration & Management
+  - [x] Kubernetes
+  - [x] Ingress NGINX
 - Web Server
-    - [x] [NGINX](http://www.private-cloud.com/nginx)
-- Identity and Access Management
-    - [ ] Keycloak
-- Configuration Management
-    - [x] [Ansible/AWX](http://www.private-cloud.com/awx/#/home)
-    - [ ] Terraform
-- GitOps
-    - [ ] Jenkins
-    - [x] Flux
-    - [x] [Weave GitOps](http://www.private-cloud.com/weave-gitops)
-    - [x] [Argo CD](http://www.private-cloud.com/argocd)
-- Message Queue
-    - [ ] Kafka
-    - [ ] RabbitMQ
-- Security
-    - [ ] Clair
-    - [ ] Falco
-    - [ ] Vault
-    - [ ] Trivy
-    - [ ] SonarQube
-    - [ ] cert-manager
-- Observability
-    - [x] Metrics Server
-    - [x] [Prometheus](http://www.private-cloud.com/prometheus)
-    - [x] [Grafana](http://www.private-cloud.com/grafana)
-    - [x] [Alertmanager](http://www.private-cloud.com/alertmanager)
-    - [ ] Loki
-    - [ ] OTEL
-    - [ ] Jaeger
-- Image Registry
-    - [ ] Harbor
-- Project Management
-    - [ ] GitLab
-- Testing
-    - [ ] Ginkgo
-    - [ ] PyTest
-- Backup and Disaster Recovery
-    - [ ] Velero
+  - [x] [NGINX](http://www.private-cloud.com/nginx)
+- Automation & Configuration
+  - [x] [Ansible/AWX](http://www.private-cloud.com/awx/#/home)
+- Continuous Integration & Delivery
+  - [x] Flux
+  - [x] [Weave GitOps](http://www.private-cloud.com/weave-gitops)
+  - [x] [Argo CD](http://www.private-cloud.com/argocd)
+- Observability and Analysis
+  - [x] Metrics Server
+  - [x] [Prometheus](http://www.private-cloud.com/prometheus)
+  - [x] [Grafana](http://www.private-cloud.com/grafana)
+  - [x] [Alertmanager](http://www.private-cloud.com/alertmanager)
 
-# Troubleshooting
+# Deploy
 
 ```
-# flux
-kind load docker-image ghcr.io/fluxcd/helm-controller:v0.37.2 --name private-cloud --nodes private-cloud-worker2,private-cloud-worker
-kind load docker-image ghcr.io/fluxcd/kustomize-controller:v1.2.1 --name private-cloud --nodes private-cloud-worker2,private-cloud-worker
-kind load docker-image ghcr.io/fluxcd/notification-controller:v1.2.3 --name private-cloud --nodes private-cloud-worker2,private-cloud-worker
-kind load docker-image ghcr.io/fluxcd/source-controller:v1.2.3 --name private-cloud --nodes private-cloud-worker2,private-cloud-worker
+./install.sh
+```
 
-# awx
-kind load docker-image quay.io/ansible/awx-operator:2.10.0 --name private-cloud --nodes private-cloud-worker2,private-cloud-worker
-kind load docker-image postgres:13 --name private-cloud --nodes private-cloud-worker2,private-cloud-worker
-kind load docker-image docker.io/redis:7 --name private-cloud --nodes private-cloud-worker2,private-cloud-worker
-kind load docker-image quay.io/ansible/awx:23.6.0 --name private-cloud --nodes private-cloud-worker2,private-cloud-worker
-kind load docker-image quay.io/ansible/awx-ee:latest --name private-cloud --nodes private-cloud-worker2,private-cloud-worker
+# Test
 
-# argocd
-kind load docker-image quay.io/argoproj/argocd:v2.9.3 --name private-cloud --nodes private-cloud-worker2,private-cloud-worker
+```
+./test/e2e-test.sh
 ```
