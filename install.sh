@@ -27,7 +27,7 @@ kind create cluster --name private-cloud --config kind-conf/kind-config.yaml
 # https://fluxcd.io/flux/get-started/
 echo "install flux"
 flux bootstrap github \
-  --owner=$GITHUB_USER \
+  --owner="$GITHUB_USER" \
   --repository=private-cloud \
   --branch=main \
   --path=./clusters/private-cloud \
