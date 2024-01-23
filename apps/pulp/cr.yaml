@@ -4,6 +4,7 @@ metadata:
   name: pulp
   namespace: awx
 spec:
+  admin_password_secret: pulp-admin-password
   api:
     replicas: 1
   content:
@@ -17,3 +18,11 @@ spec:
     redis_storage_class: standard
   # pulp_settings:
   #   api_root: "/pulp/"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: pulp-admin-password
+  namespace: awx
+stringData:
+  password: admin

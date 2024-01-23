@@ -9,7 +9,7 @@ kubectl get secret pulp-admin-password -n awx -o jsonpath="{.data.password}" | b
 
 k port-forward -n awx svc/pulp-web-svc 24880:24880
 
-k port-forward -n awx po/pulp-web-56d998d5d-9cvht 8080:8080
+k port-forward -n awx po/pulp-worker-759fc8795b-gvtnl 8080:8080
 ```
 
 ### ref
