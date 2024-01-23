@@ -7,21 +7,17 @@
   - [ ] helmchart
 - [x] flux ui tips
 - [x] ingress annotation
-- [ ] app base path learning
-- [ ] install prometheus&grafana&alertmanager
-    - https://medium.com/@giorgiodevops/kind-install-prometheus-operator-and-fix-missing-targets-b4e57bcbcb1f
-    - https://medium.com/@charled.breteche/kind-fix-missing-prometheus-operator-targets-1a1ff5d8c8ad
+- [x] app base path learning
 - [ ] enable tls for ingress
 - [ ] install jenkins
-- [ ] publish kind node image
 - [ ] certmgr
 - [ ] diff all app mainifests and check if it need a blog
 - [ ] argo ingress issue
 - [ ] argo deploy podinfo
 - [ ] mysql ingress issue
 - [x] check yaml format
-- [ ] add shell lint
+- [x] add shell lint
 - [x] auto e2e test
 - [ ] use Ginkgo refactor e2e
 - [ ] go thru repo and list the topic to share with blog
-- [ ] blog for lint tool: yaml and shell
+- [x] blog for lint tool: yaml and shell
