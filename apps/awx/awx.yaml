@@ -8,6 +8,7 @@ spec:
   admin_password_secret: awx-admin-password
   service_type: clusterip
   ingress_type: ingress
+  ingress_class_name: nginx
   ingress_path: /awx
   projects_storage_size: 1Gi
   ingress_annotations: |

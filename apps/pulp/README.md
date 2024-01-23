@@ -4,6 +4,12 @@ curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releas
 kubectl create -f https://operatorhub.io/install/pulp-operator.yaml
 
 kubectl apply -f cr.yaml
+
+kubectl get secret pulp-admin-password -n awx -o jsonpath="{.data.password}" | base64 --decode && echo
+
+k port-forward -n awx svc/pulp-web-svc 24880:24880
+
+k port-forward -n awx po/pulp-web-56d998d5d-9cvht 8080:8080
 ```
 
 ### ref

@@ -12,3 +12,8 @@ spec:
     replicas: 1
   web:
     replicas: 1
+  cache:
+    enabled: true
+    redis_storage_class: standard
+  # pulp_settings:
+  #   api_root: "/pulp/"
