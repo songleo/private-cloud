@@ -87,7 +87,7 @@ spec:
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
-              drop: [ "ALL" ]
+              drop: ["ALL"]
           command:
           - /bin/olm
           args:
@@ -154,7 +154,7 @@ spec:
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
-              drop: [ "ALL" ]
+              drop: ["ALL"]
           command:
           - /bin/catalog
           args:
@@ -162,7 +162,7 @@ spec:
           - olm
           - --configmapServerImage=quay.io/operator-framework/configmap-operator-registry:latest
           - --util-image
-          -  quay.io/operator-framework/olm@sha256:30481639e89a0cb282fc1855c1bfdde96ec5ee36d1c651c2d0d79c8d249e3ed5
+          - quay.io/operator-framework/olm@sha256:30481639e89a0cb282fc1855c1bfdde96ec5ee36d1c651c2d0d79c8d249e3ed5
           - --set-workload-user-id=true
           image: quay.io/operator-framework/olm@sha256:30481639e89a0cb282fc1855c1bfdde96ec5ee36d1c651c2d0d79c8d249e3ed5
           imagePullPolicy: IfNotPresent
@@ -327,7 +327,7 @@ spec:
                 securityContext:
                   allowPrivilegeEscalation: false
                   capabilities:
-                    drop: [ "ALL" ]
+                    drop: ["ALL"]
                 command:
                 - /bin/package-server
                 - -v=4
