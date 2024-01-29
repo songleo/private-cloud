@@ -23,5 +23,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.FLUX_TOKEN }}
       run: bash ./install.sh
 
-    - name: run e2e test
-      run: bash ./test/e2e-test.sh
+    - name: run deployment test
+      run: bash ./test/deployment-test.sh
+
+    - name: run ingress test
+      run: bash ./test/ingress-test.sh
