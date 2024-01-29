@@ -34,6 +34,8 @@ Please ensure that you add the mapping of IP addresses and domain names in your 
   - [x] [Prometheus](http://www.private-cloud.com/prometheus)
   - [x] [Grafana](http://www.private-cloud.com/grafana)
   - [x] [Alertmanager](http://www.private-cloud.com/alertmanager)
+- Cloud Native Storage
+  - [x] [MinIO](https://www.private-cloud.com/minio/)
 
 # Deploy
 
