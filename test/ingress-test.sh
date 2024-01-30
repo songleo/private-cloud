@@ -19,3 +19,5 @@ echo "test alertmanager ingress"
 curl -o /dev/null -s -w "%{http_code}" http://www.private-cloud.com/alertmanager | grep -q 200 || exit 1
 echo "test weave-gitops ingress"
 curl -o /dev/null -s -w "%{http_code}" http://www.private-cloud.com/weave-gitops | grep -q 301 || exit 1
+echo "test minio ingress"
+curl -k -o /dev/null -s -w "%{http_code}" http://www.private-cloud.com/minio/ | grep -q 200 || exit 1

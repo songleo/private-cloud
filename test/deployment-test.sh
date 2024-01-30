@@ -72,3 +72,7 @@ kubectl wait --timeout 300s --for=condition=available -n flux-system \
     deployment/weave-gitops \
     || exit 1
 
+flux reconcile kustomization minio
+kubectl wait --timeout 300s --for=condition=available -n minio \
+    deployment/minio \
+    || exit 1
