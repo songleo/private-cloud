@@ -6,7 +6,6 @@ This repository primarily offers a tool that enables users to quickly build a pr
 - kind v0.20.0
 - docker
 - flux version 2.2.2
-- weave-gitop 0.38.0
 - $GITHUB_USER
 - $GITHUB_TOKEN
 
@@ -46,5 +45,6 @@ Please ensure that you add the mapping of IP addresses and domain names in your 
 # Test
 
 ```
-./test/e2e-test.sh
+./test/deployment-test.sh
+./test/ingress-test.sh
 ```
