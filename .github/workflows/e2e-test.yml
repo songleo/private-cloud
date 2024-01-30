@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - name: checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: install k8s cluster and deploy flux to install all apps
       env:

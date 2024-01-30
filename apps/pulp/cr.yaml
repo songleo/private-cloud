@@ -16,8 +16,6 @@ spec:
   cache:
     enabled: true
     redis_storage_class: standard
-  # pulp_settings:
-  #   api_root: "/pulp/"
 ---
 apiVersion: v1
 kind: Secret
