@@ -1,0 +1,26 @@
+apiVersion: repo-manager.pulpproject.org/v1beta2
+kind: Pulp
+metadata:
+  name: pulp
+  namespace: awx
+spec:
+  admin_password_secret: pulp-admin-password
+  api:
+    replicas: 1
+  content:
+    replicas: 1
+  worker:
+    replicas: 1
+  web:
+    replicas: 1
+  cache:
+    enabled: true
+    redis_storage_class: standard
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: pulp-admin-password
+  namespace: awx
+stringData:
+  password: admin

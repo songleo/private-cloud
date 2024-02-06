@@ -12,7 +12,7 @@
         state: present
 
     - name: create project
-      awx.awx.project:
+      project:
         name: automation-system
         organization: automation-system
         scm_type: git
@@ -21,12 +21,12 @@
         scm_update_on_launch: false
 
     - name: create inventory
-      awx.awx.inventory:
+      inventory:
         name: automation-system
         organization: automation-system
 
     - name: create machine credential
-      awx.awx.credential:
+      credential:
         name: automation-system
         organization: automation-system
         credential_type: Machine
@@ -36,7 +36,7 @@
           password: admin
 
     - name: add new host to inventory
-      awx.awx.host:
+      host:
         name: "{{ item.name }}"
         inventory: automation-system
         enabled: true
@@ -53,7 +53,7 @@
             ansible_ssh_port: 22222
 
     - name: add job template to ping host
-      awx.awx.job_template:
+      job_template:
         name: ping-host
         job_type: run
         inventory: automation-system

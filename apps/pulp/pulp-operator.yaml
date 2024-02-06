@@ -1,0 +1,19 @@
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: operatorgroup
+  namespace: awx
+spec:
+  targetNamespaces:
+  - awx
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: pulp-operator
+  namespace: awx
+spec:
+  channel: beta
+  name: pulp-operator
+  source: operatorhubio-catalog
+  sourceNamespace: olm

@@ -1,0 +1,8 @@
+exclude_paths:
+  - apps/kube-prometheus/manifests
+  - apps/awx/playbooks/configure_awx.yml
+  - apps/awx/playbooks/launch_job.yml
+
+skip_list:
+  - yaml[indentation]
+  - yaml[line-length]

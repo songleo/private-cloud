@@ -1,4 +1,4 @@
-name: yaml lint
+name: lint
 
 on:  # yamllint disable-line rule:truthy
   push:
@@ -10,14 +10,20 @@ on:  # yamllint disable-line rule:truthy
       - 'release-*'
 
 jobs:
-  yaml-lint:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
     - name: checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
-    - name: lint yaml files
+    - name: run shell check
+      uses: ludeeus/action-shellcheck@master
+
+    - name: run yaml lint
       uses: ibiqlik/action-yamllint@v3
       with:
-        config_file: '.yamllint.yml'
+        config_file: '.config/.yamllint.yml'
+
+    - name: run ansible lint
+      uses: ansible/ansible-lint@v6

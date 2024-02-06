@@ -1,0 +1,20 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: minio
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./apps/minio
+  prune: true
+  retryInterval: 1m0s
+  sourceRef:
+    kind: GitRepository
+    name: apps
+  targetNamespace: minio
+  timeout: 3m0s
+  wait: true
+  dependsOn:
+    - name: ingress-nginx
+      namespace: flux-system
