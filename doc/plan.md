@@ -25,3 +25,5 @@
 - [ ] ansible-lint
 - [ ] fix pulp web issue
 - [ ] add loki
+- [ ] add key vault
+- [ ] use key vault in ansible
