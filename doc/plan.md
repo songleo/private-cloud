@@ -13,8 +13,6 @@
 - [ ] certmgr
 - [ ] diff all app mainifests and check if it need a blog
 - [ ] argo ingress issue
-- [ ] argo deploy podinfo
-- [ ] mysql ingress issue
 - [x] check yaml format
 - [x] add shell lint
 - [x] auto e2e test
@@ -22,8 +20,9 @@
 - [ ] go thru repo and list the topic to share with blog
 - [x] blog for lint tool: yaml and shell
 - [x] add minio to flux
-- [ ] ansible-lint
-- [ ] fix pulp web issue
+- [x] ansible-lint
+- [ ] add galaxy
 - [ ] add loki
+- [ ] add redis
 - [ ] add key vault
 - [ ] use key vault in ansible
