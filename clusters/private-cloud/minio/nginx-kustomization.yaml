@@ -5,10 +5,9 @@ metadata:
   name: minio
   namespace: flux-system
 spec:
-  interval: 1m0s
+  interval: 5m0s
   path: ./apps/minio
   prune: true
-  retryInterval: 1m0s
   sourceRef:
     kind: GitRepository
     name: apps
