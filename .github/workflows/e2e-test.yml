@@ -14,17 +14,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout repository
+    - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: install k8s cluster and deploy flux to install all apps
+    - name: Install k8s cluster and deploy flux to install all apps
       env:
         GITHUB_USER: ${{ secrets.FLUX_USER }}
         GITHUB_TOKEN: ${{ secrets.FLUX_TOKEN }}
       run: bash ./install.sh
 
-    - name: run deployment test
+    - name: Run deployment test
       run: bash ./test/deployment-test.sh
 
-    - name: run ingress test
+    - name: Run ingress test
       run: bash ./test/ingress-test.sh
