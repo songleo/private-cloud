@@ -34,12 +34,12 @@ kubectl wait --timeout 300s --for=condition=available -n local-path-storage \
     deployment/local-path-provisioner \
     || exit 1
 
-flux reconcile kustomization olm
-kubectl wait --timeout 300s --for=condition=available -n olm \
-    deployment/blackbox-exporter \
-    deployment/olm-operator \
-    deployment/packageserver \
-    || exit 1
+# flux reconcile kustomization olm
+# kubectl wait --timeout 300s --for=condition=available -n olm \
+#     deployment/blackbox-exporter \
+#     deployment/olm-operator \
+#     deployment/packageserver \
+#     || exit 1
 
 flux reconcile kustomization kube-prometheus
 kubectl wait --timeout 300s --for=condition=available -n monitoring \
