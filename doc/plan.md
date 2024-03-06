@@ -26,3 +26,4 @@
 - [ ] add redis
 - [ ] add key vault
 - [ ] use key vault in ansible
+- [ ] add external-secrets: https://github.com/external-secrets/external-secrets
