@@ -24,6 +24,7 @@
 - [ ] add galaxy
 - [ ] add loki
 - [ ] add redis
-- [ ] add key vault
-- [ ] use key vault in ansible
+- [x] add vault
+- [ ] add test for vault
+- [ ] use vault in ansible
 - [ ] add external-secrets: https://github.com/external-secrets/external-secrets
