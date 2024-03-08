@@ -25,6 +25,9 @@
 - [ ] add loki
 - [ ] add redis
 - [x] add vault
+- [ ] use vault for k8s secret: https://www.hashicorp.com/blog/manage-kubernetes-secrets-for-flux-with-hashicorp-vault
 - [ ] add test for vault
+- [ ] add test for external-secrets
 - [ ] use vault in ansible
-- [ ] add external-secrets: https://github.com/external-secrets/external-secrets
+- [x] add external-secrets: https://github.com/external-secrets/external-secrets
+- [ ] use external-secrets with vault
