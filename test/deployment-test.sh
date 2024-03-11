@@ -85,6 +85,10 @@ kubectl wait --timeout 300s --for=condition=available -n minio \
     || exit 1
 
 flux reconcile helmrelease vault
+kubectl wait --timeout 300s --for=condition=available -n vault \
+    deployment/vault-agent-injector \
+    || exit 1
+
 kubectl get daemonsets vault-csi-provider -n vault -o jsonpath='{.status.numberReady}' \
     | grep 2 \
     || exit 1
