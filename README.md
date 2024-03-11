@@ -35,6 +35,10 @@ Please ensure that you add the mapping of IP addresses and domain names in your 
   - [x] [Alertmanager](http://www.private-cloud.com/alertmanager)
 - Cloud Native Storage
   - [x] [MinIO](https://www.private-cloud.com/minio/)
+- Key Management
+  - [x] Vault
+- Security & Compliance
+  - [x] external-secrets
 
 # Deploy
 
