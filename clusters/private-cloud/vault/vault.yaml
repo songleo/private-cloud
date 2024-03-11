@@ -22,3 +22,10 @@ spec:
         name: hashicorp
         namespace: flux-system
   # https://github.com/hashicorp/vault-helm/blob/main/values.yaml
+  values:
+    csi:
+      enabled: true
+    ui:
+      enabled: true
+    ingress:
+      enabled: true
