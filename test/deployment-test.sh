@@ -83,3 +83,8 @@ flux reconcile kustomization minio
 kubectl wait --timeout 300s --for=condition=available -n minio \
     deployment/minio \
     || exit 1
+
+flux reconcile helmrelease vault
+kubectl get daemonsets vault-csi-provider -n vault -o jsonpath='{.status.numberReady}' \
+    | grep 2 \
+    || exit 1

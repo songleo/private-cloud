@@ -21,12 +21,12 @@
 - [x] blog for lint tool: yaml and shell
 - [x] add minio to flux
 - [x] ansible-lint
-- [ ] add galaxy
+- [ ] add galaxy_ng
 - [ ] add loki
 - [ ] add redis
 - [x] add vault
 - [ ] use vault for k8s secret: https://www.hashicorp.com/blog/manage-kubernetes-secrets-for-flux-with-hashicorp-vault
-- [ ] add test for vault
+- [x] add test for vault
 - [ ] add test for external-secrets
 - [ ] use vault in ansible
 - [x] add external-secrets: https://github.com/external-secrets/external-secrets
