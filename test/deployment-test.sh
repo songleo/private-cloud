@@ -88,3 +88,10 @@ flux reconcile helmrelease vault
 kubectl get daemonsets vault-csi-provider -n vault -o jsonpath='{.status.numberReady}' \
     | grep 2 \
     || exit 1
+
+flux reconcile helmrelease external-secrets
+kubectl wait --timeout 300s --for=condition=available -n external-secrets \
+    deployment/external-secrets \
+    deployment/external-secrets-cert-controller \
+    deployment/external-secrets-webhook \
+    || exit 1
