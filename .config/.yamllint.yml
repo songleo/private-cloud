@@ -4,3 +4,6 @@ rules:
   indentation: disable
   line-length: disable
   document-start: disable
+
+ignore:
+  - apps/olm/

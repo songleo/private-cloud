@@ -13,8 +13,6 @@
 - [ ] certmgr
 - [ ] diff all app mainifests and check if it need a blog
 - [ ] argo ingress issue
-- [ ] argo deploy podinfo
-- [ ] mysql ingress issue
 - [x] check yaml format
 - [x] add shell lint
 - [x] auto e2e test
@@ -22,8 +20,14 @@
 - [ ] go thru repo and list the topic to share with blog
 - [x] blog for lint tool: yaml and shell
 - [x] add minio to flux
-- [ ] ansible-lint
-- [ ] fix pulp web issue
+- [x] ansible-lint
+- [ ] add galaxy
 - [ ] add loki
-- [ ] add key vault
-- [ ] use key vault in ansible
+- [ ] add redis
+- [x] add vault
+- [ ] use vault for k8s secret: https://www.hashicorp.com/blog/manage-kubernetes-secrets-for-flux-with-hashicorp-vault
+- [ ] add test for vault
+- [ ] add test for external-secrets
+- [ ] use vault in ansible
+- [x] add external-secrets: https://github.com/external-secrets/external-secrets
+- [ ] use external-secrets with vault

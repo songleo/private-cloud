@@ -14,16 +14,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout repository
+    - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: run shell check
+    - name: Run shell check
       uses: ludeeus/action-shellcheck@master
 
-    - name: run yaml lint
+    - name: Run yaml lint
       uses: ibiqlik/action-yamllint@v3
       with:
         config_file: '.config/.yamllint.yml'
 
-    - name: run ansible lint
+    - name: Run ansible lint
       uses: ansible/ansible-lint@v6

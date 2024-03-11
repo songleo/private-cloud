@@ -2,6 +2,8 @@ exclude_paths:
   - apps/kube-prometheus/manifests
   - apps/awx/playbooks/configure_awx.yml
   - apps/awx/playbooks/launch_job.yml
+  - apps/olm/olm.yaml
+  - apps/olm/crds.yaml
 
 skip_list:
   - yaml[indentation]
