@@ -4,7 +4,7 @@
   - [x] kustomization
   - [x] gitrepository
   - [ ] helmrepository
-  - [ ] helmchart
+  - [x] helmchart
 - [x] flux ui tips
 - [x] ingress annotation
 - [x] app base path learning
